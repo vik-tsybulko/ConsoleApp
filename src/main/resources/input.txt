@@ -1,0 +1,2 @@
+/home/viktor/Документы/WorkAndTeach/ConsoleApp/src/main/
+/home/viktor/Документы/WorkAndTeach/ConsoleApp/src/main/java
