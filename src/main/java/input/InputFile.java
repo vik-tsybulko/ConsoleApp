@@ -1,3 +1,5 @@
+package input;
+
 import java.io.*;
 import java.util.ArrayList;
 

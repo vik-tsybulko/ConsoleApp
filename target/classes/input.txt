@@ -1,2 +1,4 @@
-/home/viktor/Документы/WorkAndTeach/ConsoleApp/src/main/
+/home/viktor/Документы/WorkAndTeach/ConsoleAp/
 /home/viktor/Документы/WorkAndTeach/ConsoleApp/src/main/java
+/home/viktor/Документы/WorkAndTeach/ConsoleApp/src
+/home/viktor/Документы/WorkAndTeach/ConsoleApp/src/test

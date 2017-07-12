@@ -1,24 +1,36 @@
+package logic;
+
+import output.View;
+
 import java.io.File;
 
 
 public class CounterFiles implements Runnable {
-    private String path;
+    private static String path;
     private long countFiles;
+    private static int numberOfThread;
 
-    CounterFiles(String path) {
-        this.path = path;
-
+    public static String getPath() {
+        return path;
+    }
+    public static int getNumberOfThread() {
+        return numberOfThread;
     }
 
-    public long getCountFiles() {
-        return countFiles;
+    CounterFiles(String path, int numberOfThread) {
+        CounterFiles.path = path;
+        CounterFiles.numberOfThread = numberOfThread;
+
+
     }
 
     public Long numberOfFiles(String path) {
 
         File file = new File(path);
         File[] files = file.listFiles();
-
+        if (files == null) {
+            return -1L;
+        }
         for (File localPath : files) {
             if (localPath.isDirectory()) {
                 numberOfFiles(localPath.getPath());
@@ -28,10 +40,11 @@ public class CounterFiles implements Runnable {
             }
         }
         return countFiles;
-  }
-
+    }
     public void run() {
-        System.out.println(numberOfFiles(path));
+        View view = new View();
+        view.showResults(numberOfFiles(path));
+
 
     }
 }
