@@ -1,5 +1,6 @@
 package logic;
 
+import output.OutputFile;
 import output.View;
 
 import java.io.File;
@@ -7,6 +8,7 @@ import java.io.File;
 
 public class CounterFiles implements Runnable {
     private static String path;
+    private static String outFile;
     private long countFiles;
     private static int numberOfThread;
 
@@ -17,11 +19,10 @@ public class CounterFiles implements Runnable {
         return numberOfThread;
     }
 
-    CounterFiles(String path, int numberOfThread) {
+    CounterFiles(String path, int numberOfThread, String outFile) {
         CounterFiles.path = path;
         CounterFiles.numberOfThread = numberOfThread;
-
-
+        CounterFiles.outFile = outFile;
     }
 
     public Long numberOfFiles(String path) {
@@ -41,10 +42,11 @@ public class CounterFiles implements Runnable {
         }
         return countFiles;
     }
+
     public void run() {
         View view = new View();
         view.showResults(numberOfFiles(path));
-
+        OutputFile.writeFile(outFile, path, countFiles);
 
     }
 }

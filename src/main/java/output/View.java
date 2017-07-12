@@ -6,7 +6,6 @@ import logic.CounterFiles;
  * Created by viktor on 10.07.17.
  */
 public class View {
-    static int maxLength = 0;
     static {
 
         System.out.println("-----------------------------------------------------");

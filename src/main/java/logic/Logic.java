@@ -1,17 +1,12 @@
 package logic;
 
 import input.InputFile;
-import output.View;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import output.OutputFile;
 
 public class Logic {
     private InputFile inputFile;
     private String path;
     private String outFile;
-    private List<Thread> counterThreads = new ArrayList<Thread>();
     private int numberOfThread = 0;
     Logic(String inFile, String outFile) {
         inputFile = new InputFile();
@@ -24,13 +19,11 @@ public class Logic {
             System.out.println("No path");
             return;
         }
+        OutputFile.clearCSVFile(outFile);
         for (String path : inputFile.parseInputFile(this.path)) {
             numberOfThread++;
-            new Thread(new CounterFiles(path, numberOfThread), "Thread #" + numberOfThread).run();
-            //counterThreads.add(new Thread(new CounterFiles(path, numberOfThread), path));
+            new Thread(new CounterFiles(path, numberOfThread, outFile), "Thread #" + numberOfThread).run();
         }
-//        for (Thread thread : counterThreads) {
-//            thread.run();
-//        }
+
     }
 }
