@@ -29,10 +29,14 @@ public class CounterFiles implements Runnable {
 
         File file = new File(path);
         File[] files = file.listFiles();
+
         if (files == null) {
             return -1L;
         }
         for (File localPath : files) {
+            if (Logic.isInterrupt() == true) {
+                break;
+            }
             if (localPath.isDirectory()) {
                 numberOfFiles(localPath.getPath());
             }

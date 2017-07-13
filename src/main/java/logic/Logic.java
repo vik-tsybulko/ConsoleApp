@@ -8,6 +8,16 @@ public class Logic {
     private String path;
     private String outFile;
     private int numberOfThread = 0;
+    private static boolean interrupt = false;
+
+    public static boolean isInterrupt() {
+        return interrupt;
+    }
+
+    public static void setInterrupt(boolean interrupt) {
+        Logic.interrupt = interrupt;
+    }
+
     Logic(String inFile, String outFile) {
         inputFile = new InputFile();
         path = inFile;

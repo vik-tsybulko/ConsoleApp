@@ -3,8 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/ConsoleApp_jar</output-path>
     <root id="archive" name="ConsoleApp.jar">
       <element id="module-output" name="ConsoleApp" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jnativehook-2.1.0.jar" path-in-jar="/" />
       <element id="library" level="project" name="net.sourceforge.javacsv:javacsv:2.0" />
+      <element id="library" level="project" name="JNativeHook" />
     </root>
   </artifact>
 </component>

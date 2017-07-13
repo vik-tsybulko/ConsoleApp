@@ -1,5 +1,7 @@
 package logic;
 
+import input.KeyListener;
+
 import java.io.FileNotFoundException;
 
 /**
@@ -13,6 +15,8 @@ public class Main {
             input = args[0];
             output = args[1];
         }
+        KeyListener keyListener = new KeyListener();
+        keyListener.run();
         Logic logic = new Logic(input, output);
         logic.createThreads();
 
