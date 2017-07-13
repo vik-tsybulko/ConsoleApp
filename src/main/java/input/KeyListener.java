@@ -23,14 +23,11 @@ public class KeyListener implements NativeKeyListener, Runnable {
 
     public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
         if (nativeKeyEvent.getKeyCode() == NativeKeyEvent.VK_ESCAPE) {
-            System.out.println("pressed escape");
             Logic.setInterrupt(true);
         }
         if (nativeKeyEvent.getKeyCode() == NativeKeyEvent.VK_Q) {
 
                 GlobalScreen.unregisterNativeHook();
-                System.out.println("pressed q");
-
         }
     }
 

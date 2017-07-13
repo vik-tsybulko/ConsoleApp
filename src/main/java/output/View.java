@@ -8,7 +8,8 @@ import logic.Logic;
  */
 public class View {
     static {
-
+        System.out.println("Press ESC to cancel search");
+        System.out.println("Press Q to exit");
         System.out.println("-----------------------------------------------------");
         System.out.printf("|%-3s| %-12s| %s%n", "№", "Count Files", "Path");
         System.out.println("-----------------------------------------------------");
